@@ -1,0 +1,44 @@
+{
+  "name": "systematic-ui-scripts",
+  "version": "0.1.0",
+  "description": "Toolbox of common scripts of design system based projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sirtimbly/systematic-ui-scripts.git"
+  },
+  "keywords": [
+    "design",
+    "system",
+    "css",
+    "scripts",
+    "generator",
+    "project"
+  ],
+  "author": "Tim Bendt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sirtimbly/systematic-ui-scripts/issues"
+  },
+  "homepage": "https://github.com/sirtimbly/systematic-ui-scripts#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-config-xo-typescript": "^0.8.0",
+    "xo": "^0.24.0"
+  },
+  "dependencies": {
+    "@types/typescript": "^2.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.3.3333"
+  },
+  "xo": {
+		"extends": "xo-typescript",
+		"extensions": [
+			"ts"
+		]
+	}
+}
