@@ -1,6 +1,7 @@
 
 import { src, dest, series} from "gulp";
-import cssnano from "gulp-cssnano";
+import cssnano from "cssnano";
+import postcss from "gulp-postcss";
 import rename from "gulp-rename";
 import fontmin from "gulp-fontmin";
 
@@ -61,7 +62,7 @@ export function copyStylesToPublic() {
 export function minifyToPublic() {
   return src("src/styles/*.css")
     // .pipe(sourcemaps.init())
-    .pipe(cssnano())
+    .pipe(postcss([cssnano]))
     // .pipe(sourcemaps.write("."))
     .pipe(rename({
       suffix: ".min"

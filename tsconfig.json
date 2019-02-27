@@ -16,8 +16,7 @@
     "baseUrl": ".",
     "strictNullChecks": false,
     "types": [
-      "node",
-      "jest"
+      "node"
     ],
     "paths": {
       "@/*": [

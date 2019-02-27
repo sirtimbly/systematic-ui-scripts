@@ -40,8 +40,8 @@ export function compileScss() {
       } as Options).on("error", sass.logError))
     .pipe(autoprefixer())
     .pipe(
-      sourcemaps.write("../styleguide-static/css/", {
-        sourceMappingURL(file) {
+      sourcemaps.write("../styleguide-static/css/", <sourcemaps.WriteOptions>{
+        sourceMappingURL: function(file) {
           return "./" + file.relative.replace(/\\/g, "/") + ".map";
         }
       })
