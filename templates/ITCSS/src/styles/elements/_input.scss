@@ -1,0 +1,39 @@
+@import "../settings/settings.global";
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="button"],
+input[type="submit"],
+input[type="password"],
+select,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select,
+textarea {
+  background-color: $white;
+  border: 2px solid $gray08;
+  padding: 10px;
+  color: $gray02;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+  line-height: 1.4;
+  height: 2.9rem;
+}

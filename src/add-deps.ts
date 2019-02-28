@@ -1,6 +1,12 @@
 import fs from "fs";
-type deps = { [key: string]: "string" };
-export function addDeps(scripts: deps, dependencies: deps, devDependencies: deps) {
+type deps = { [key: string]: string };
+type projectDef = {
+  dependencies?: deps,
+  devDependencies?: deps,
+  scripts?: deps,
+  [key: string]: deps
+};
+export function addDeps(additions: projectDef) {
   const file = process.cwd()+"/package.json";
   if (!file) {
     console.error("Couldn't load package.json in " + process.cwd());
@@ -14,22 +20,14 @@ export function addDeps(scripts: deps, dependencies: deps, devDependencies: deps
     return;
   }
 
-  if (!original.dependencies) {
-    original.dependencies = {}
+  for (const key in additions) {
+    if (!original[key]) {
+      original[key] = {}
+    }
+    original[key] = Object.assign(original[key], additions[key]);
   }
 
-  if (!original.devDependencies) {
-    original.devDependencies = {}
-  }
-  if (!original.scripts) {
-    original.scripts = {}
-  }
-
-  original.devDependencies = Object.assign(original.devDependencies, devDependencies);
-  original.dependencies = Object.assign(original.dependencies, dependencies);
-  original.scripts = Object.assign(original.scripts, scripts);
-
-  console.log("writing updated package.json")
+  console.log("=== Writing updated package.json ===", original)
 
   fs.writeFileSync(file, JSON.stringify(original, null, 2));
 }

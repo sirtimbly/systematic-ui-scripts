@@ -1,0 +1,18 @@
+.u-float-left {
+  float: left
+}
+
+.u-float-right {
+  float: right
+}
+
+.u-clear {
+  clear: both
+}
+
+.u-clearfix:after,
+.clearfix:after {
+  content: "" !important;
+  display: block !important;
+  clear: both !important
+}

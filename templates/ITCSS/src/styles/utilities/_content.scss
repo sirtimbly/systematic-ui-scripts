@@ -1,0 +1,50 @@
+@import "../settings/settings.global";
+@import "node_modules/sass-mq/mq";
+
+.content-separator {
+  clear: both;
+  display: block;
+  padding-bottom: 20px;
+}
+
+.block-content.gray {
+  background-color: #efefef;
+  margin: 0;
+  padding: 1.5rem 1rem;
+}
+
+.block-content .yui3-g {
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+.block-content {
+  margin: 0 0 1.5rem 0;
+}
+
+.title .h2 {
+  font-size: 2.4rem;
+}
+
+.image-holder {
+  padding: 5px;
+  border: 2px solid $gray08;
+  margin-bottom: 10px;
+  background: $white;
+  display: inline-block;
+}
+
+.image-holder.small-padding {
+  padding: 3px;
+}
+
+.left {
+  float: left;
+  margin-right: 1rem;
+}
+
+@include mq($from: md) {
+  .block-content {
+    margin: 0 1.5rem 1.5rem 0;
+  }
+}

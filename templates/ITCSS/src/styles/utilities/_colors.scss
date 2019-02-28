@@ -1,0 +1,16 @@
+$color-palette: ("-primary": $primary,
+"-secondary": $secondary,
+"-dark-blue": $dark-blue,
+"-orange": $orange,
+"-red": $red) !default;
+
+@each $name,
+$value in $color-palette {
+  .u-bg#{$name} {
+    background-color: #{$value}
+  }
+
+  .u-fg#{$name} {
+    color: #{$value};
+  }
+}

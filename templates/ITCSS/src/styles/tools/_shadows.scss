@@ -1,0 +1,110 @@
+@import "../settings/settings";
+
+@mixin hover-shadow-circle($radius, $width:100%, $height:100%) {
+
+  position: relative;
+  box-shadow: none;
+  z-index: 10;
+
+  &>* {
+    z-index: 20;
+  }
+
+  &::after {
+    border-radius: $radius;
+    box-shadow: 0 3px 11px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    content: '';
+    z-index: 10;
+    height: $height;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: opacity 240ms ease-out;
+    width: $width;
+  }
+
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+@mixin material-box-shadow($level, $hover, $inset: false) {
+
+  $shadow-initial: 0;
+  $shadow-hover: 0;
+
+
+
+  @if $level == 1 {
+    $shadow-initial: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  @if $level == 2 {
+    $shadow-initial: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  @if $level == 3 {
+    $shadow-initial: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  @if $level == 4 {
+    $shadow-initial: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  @if $level == 5 {
+    $shadow-initial: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  // return:
+  box-shadow: $shadow-initial;
+  z-index: $level * 10;
+  @if $hover == true {
+      &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s cubic-bezier(.25,.8,.25,1);
+      box-shadow: $shadow-hover ;
+      opacity: 0;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+// .card {
+//   @include material-box-shadow(2, true);
+// }
+
+
+@mixin depthBorder{
+  border-top: 1px solid $gray10;
+  border-right: 1.5px solid $gray06;
+  border-bottom: 1px solid $gray07;
+  border-left: 0px solid $gray07;
+  border-right: 0px solid $gray08;
+  box-shadow: 0px 0px 1px $gray05;
+}
+
+@mixin depthInset {
+  box-shadow: 0 1px 1px $gray10;
+}
+
+@mixin depthFocus {
+  border: 1px solid $primary-color;
+  outline: 0;
+  box-shadow: $input-shadow-focus;
+}

@@ -1,0 +1,86 @@
+///* ========================================================================
+//   #GLOBAL
+//   ======================================================================== */
+// The global settings file contains any project-wide variables; things that
+// need to be made available to the entire codebase.
+$color000: #e04343;
+$color010: #f4b403;
+$color020: #f2b203;
+$color030: #4187c5;
+$color040: #00a3c7;
+$color050: #007a94;
+$color060: #0054a6;
+$color070: #003889;
+$color080: #002d5a;
+$color090: #000045;
+// $color100: #1d3142;
+// $color110: #1a2b3b;
+// $color120: #182837;
+// $color130: #182736;
+$gray-base: scale-color($color060, $saturation: -90%, $lightness: 20%);
+$gray00: scale-color($gray-base, $lightness: -99%);
+$gray01: scale-color($gray-base, $lightness: -80%);
+$gray02: scale-color($gray-base, $lightness: -60%);
+$gray03: scale-color($gray-base, $lightness: -40%);
+$gray04: scale-color($gray-base, $lightness: -20%);
+$gray05: $gray-base;
+$gray06: scale-color($gray-base, $lightness: 30%);
+$gray07: scale-color($gray-base, $lightness: 50%);
+$gray08: scale-color($gray-base, $lightness: 68%);
+$gray09: scale-color($gray-base, $lightness: 92%);
+$gray10: scale-color($gray-base, $lightness: 97%);
+$global-font-size: 100%;
+$global-lineheight: 1.5;
+$orange: $color010;
+$primary: $color060;
+$warning: $color020;
+$alert: $color000;
+$danger: $alert;
+$secondary: $color030;
+$light-blue: $color030;
+$lightest-gray: $gray10;
+$light-gray: $gray09;
+$medium-gray: $gray06;
+$dark-gray: $gray03;
+$darkest-gray: $gray02;
+$dark-blue: $color070;
+$red: $alert;
+$foreground-medium: $color070;
+$foreground-dark: $color080;
+$black: #000000;
+$white: #ffffff;
+$body-background: $gray10;
+$body-font-color: $black;
+$body-antialiased: true;
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-button-padding: $global-padding $global-padding * 1.25;
+$global-position: 1rem;
+$global-weight-normal: 400;
+$global-weight-medium: 500;
+$global-weight-bold: 700;
+$global-radius: 3px;
+$global-menu-padding: 0.7rem 1rem;
+$global-menu-nested-margin: 1rem;
+$global-text-direction: ltr;
+$global-flexbox: true;
+$global-prototype-breakpoints: false;
+$global-button-cursor: auto;
+$global-color-pick-contrast-tolerance: 3.5;
+$print-transparent-backgrounds: true;
+$global-line-length: 65rem;
+$global-transition: all 300ms ease-in-out !default;
+$global-border-radius: 4px;
+$shadow010: 1px 1px 1px rgba(0, 0, 0, 0.2);
+$shadow020: 1px 1px 2px rgba(0, 0, 0, 0.2);
+$shadow030: 3px 3px 3px rgba(0, 0, 0, 0.3);
+$shadow040: 1px 1px 4px rgba(0, 0, 0, 0.3);
+$shadow050: 1px 1px 5px rgba(0, 0, 0, 0.3);
+$button-shadow: $shadow050;
+// Breakpoints:
+//  sm
+//  mobile
+//  mobile-wide
+//  md
+//  lg
+$mq-breakpoints: (sm: 23.25em, mobile: 30em, mobile-wide: 40em, md: 45.5em, lg: 62.5em);

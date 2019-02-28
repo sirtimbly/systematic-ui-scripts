@@ -7,6 +7,7 @@
     "systematic-ui": "dist/index.js"
   },
   "scripts": {
+    "start": "ts-node src/index.ts",
     "test": "xo && test",
     "debug": "node --nolazy -r ts-node/register --inspect=9229 src/index.ts",
     "build": "tsc"

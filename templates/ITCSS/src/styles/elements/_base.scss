@@ -1,0 +1,49 @@
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  color: $gray02;
+}
+
+address,
+blockquote,
+dl,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+ol,
+p,
+pre,
+table,
+ul {
+  margin-bottom: 1rem;
+}
+
+dd,
+ol,
+ul {
+  margin-left: 1rem;
+}
+
+a {
+  color: $primary;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.5;
+  overflow-y: scroll;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  color: $gray02;
+}
+
+.print-logo {
+  display: none;
+}

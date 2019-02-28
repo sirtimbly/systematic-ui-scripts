@@ -1,0 +1,14 @@
+@import "../settings/settings.global";
+
+select {
+  background-image: url(/multimedia/select_dropdown_arrow.png?v=1) !important;
+  background-size: auto 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background: $white;
+  padding-right: 50px;
+}
+
+select::-ms-expand {
+  display: none;
+}
