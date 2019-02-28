@@ -1,7 +1,13 @@
 #! /usr/bin/env node
 
-import {fractal} from "./configs/fractal";
+import inquirer from "inquirer";
+import commander from "commander";
 import {ncp} from "ncp";
+
+import { addDeps } from "./add-deps";
+import {fractal} from "./configs/fractal";
+import { scss } from "./configs/scss";
+
 const ds = {
   "Fractal(1)": fractal,
   "UI Engine": {}
@@ -12,10 +18,7 @@ const preprocessors = {
   "PostCSS": {}
 }
 
-import inquirer from "inquirer";
-import { addDeps } from "./add-deps";
-import commander from "commander";
-import { scss } from "./configs/scss";
+
 
 const program = commander;
 
@@ -54,7 +57,11 @@ function newDesignSystem() {
         });
       })
 
-      addDeps(dsConfig.scripts, dsConfig.dependencies, dsConfig.devDependencies);
+      addDeps({
+        "scripts": dsConfig.scripts,
+        "dependencies": dsConfig.dependencies,
+        "devDependencies": dsConfig.devDependencies
+      });
 
       inquirer.prompt(dsConfig.prompts).then(dsConfig.handler);
 
@@ -83,7 +90,11 @@ function newStylesSystem() {
         });
       })
 
-      addDeps(dsConfig.scripts, dsConfig.dependencies, dsConfig.devDependencies);
+      addDeps({
+        "scripts": dsConfig.scripts,
+        "dependencies": dsConfig.dependencies,
+        "devDependencies": dsConfig.devDependencies
+      });
 
       inquirer.prompt(dsConfig.prompts).then(dsConfig.handler);
 

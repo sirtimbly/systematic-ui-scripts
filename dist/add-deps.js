@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var fs_1 = tslib_1.__importDefault(require("fs"));
-function addDeps(scripts, dependencies, devDependencies) {
+function addDeps(additions) {
     var file = process.cwd() + "/package.json";
     if (!file) {
         console.error("Couldn't load package.json in " + process.cwd());
@@ -13,19 +13,13 @@ function addDeps(scripts, dependencies, devDependencies) {
         console.error("Couldn't parse package.json");
         return;
     }
-    if (!original.dependencies) {
-        original.dependencies = {};
+    for (var key in additions) {
+        if (!original[key]) {
+            original[key] = {};
+        }
+        original[key] = Object.assign(original[key], additions[key]);
     }
-    if (!original.devDependencies) {
-        original.devDependencies = {};
-    }
-    if (!original.scripts) {
-        original.scripts = {};
-    }
-    original.devDependencies = Object.assign(original.devDependencies, devDependencies);
-    original.dependencies = Object.assign(original.dependencies, dependencies);
-    original.scripts = Object.assign(original.scripts, scripts);
-    console.log("writing updated package.json");
+    console.log("=== Writing updated package.json ===", original);
     fs_1.default.writeFileSync(file, JSON.stringify(original, null, 2));
 }
 exports.addDeps = addDeps;
