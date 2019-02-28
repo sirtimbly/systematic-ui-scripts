@@ -1,10 +1,10 @@
 import { mkdirSync } from "fs";
 import mkdirp from "mkdirp";
 
-export const fractal = {
+export const scss = {
   scripts: {
-    "ds:start": "fractal start --sync",
-    "ds:build": "fractal build",
+    "scss:start": "parcel watch src/styles/main.scss",
+    "scss:build": "parcel watch --no-content-hash src/styles/main.scss ",
   },
   dependencies: {
     "@frctl/fractal": "^1.1.7",
@@ -13,10 +13,10 @@ export const fractal = {
   cpFolderStructure: ["templates/fractal1/"],
   prompts: [{
     type: "list",
-    name: "organization",
+    name: "architecture",
     choices: [
-      {value: "atomic", name: "Atomic (atoms, molecules, organisms, templates)"},
-      {value: "oocss", name: "OOCSS (objects, components, prototypes)"},
+      {value: "itcss", name: "IT-CSS Inverted Triangle (inuitcss)"},
+      {value: "foundation", name: "Foundation for Sites by Zurb"},
     ],
   }],
   handler: (answers) => {
