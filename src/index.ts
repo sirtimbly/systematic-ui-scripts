@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 
 import {fractal} from "./configs/fractal";
 import {ncp} from "ncp";

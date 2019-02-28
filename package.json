@@ -2,12 +2,14 @@
   "name": "systematic-ui-scripts",
   "version": "0.1.0",
   "description": "Toolbox of common scripts of design system based projects",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "bin": {
+    "systematic-ui": "dist/index.js"
+  },
   "scripts": {
     "test": "xo && test",
     "debug": "node --nolazy -r ts-node/register --inspect=9229 src/index.ts",
-    "ds:start": "fractal start --sync",
-    "ds:build": "fractal build"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -29,8 +31,6 @@
   "homepage": "https://github.com/sirtimbly/systematic-ui-scripts#readme",
   "devDependencies": {},
   "dependencies": {
-    "@frctl/fractal": "^1.1.7",
-    "@frctl/handlebars": "^1.1.5",
     "@types/commander": "^2.12.2",
     "@types/inquirer": "0.0.43",
     "@types/mkdirp": "^0.5.2",
